@@ -15,12 +15,15 @@ def discount():
 
 
 def main():
-    again = "y"
-    while again.lower() == "y":
-        discount()
-        again = input("Would you like to calculate again? (y|n) ")
-        print()
-    print("Bye!")
+    playing = True
+    discount()
+    while playing:
+        again = input("Would you like to calculate again? (y|n) ").lower()
+        if again == "y":
+            discount()
+        if again == "n":
+            print("Goodbye!")
+            playing = False
 
 
 if __name__ == "__main__":
